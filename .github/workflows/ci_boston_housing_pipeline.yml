@@ -32,10 +32,10 @@ jobs:
 
           python3 /home/runner/work/Mlops_g24ai2002_a1/Mlops_g24ai2002_a1/dtree/train.py
 
-          python3 dtree/train.py
+          python3 train.py
 
 
       - name: Run KernelRidge (train2.py from kernelridge branch)
         run: |
           echo "Running KernelRidge..."
-          python3 kernelridge/train2.py
+          python3 train2.py

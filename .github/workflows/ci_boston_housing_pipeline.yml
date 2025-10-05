@@ -29,10 +29,10 @@ jobs:
       - name: Run DecisionTreeRegressor (train.py from dtree branch)
         run: |
           echo "Running DecisionTreeRegressor..."
-          python3 dtree/train.py
+          python3 train.py
 
       - name: Run KernelRidge (train2.py from kernelridge branch)
         run: |
           echo "Running KernelRidge..."
-          python3 kernelridge/train2.py
+          python3 train2.py
 

@@ -1,0 +1,38 @@
+name: ML Workflow
+
+on:
+  push:
+    branches:
+      - kernelridge   # Trigger only when pushing to kernelridge branch
+  pull_request:
+    branches:
+      - main          # (Optional) Also trigger when merging into main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run DecisionTreeRegressor (train.py from dtree branch)
+        run: |
+          echo "Running DecisionTreeRegressor..."
+          python train.py
+
+      - name: Run KernelRidge (train2.py from kernelridge branch)
+        run: |
+          echo "Running KernelRidge..."
+          python train2.py
+

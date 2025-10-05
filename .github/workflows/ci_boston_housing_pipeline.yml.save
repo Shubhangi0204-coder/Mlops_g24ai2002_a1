@@ -1,0 +1,33 @@
+name: MLOps - Assignment 1
+
+# Triggers only when code is pushed to the 'kernelridge' branch [cite: 26]
+on:
+  push:
+    branches:
+      - kernelridge
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python 3.13
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.13'
+        
+    # Installs dependencies using requirements.txt [cite: 26]
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    # Runs the Decision Tree model (train.py) [cite: 30]
+    - name: Run Model 1: Decision Tree (train.py)
+      run: python train.py
+      
+    # Runs the Kernel Ridge model (train2.py) [cite: 30]
+    - name: Run Model 2: Kernel Ridge (train2.py)
+      run: python train2.py

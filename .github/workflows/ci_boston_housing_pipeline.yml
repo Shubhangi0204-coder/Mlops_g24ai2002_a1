@@ -39,4 +39,3 @@ jobs:
         run: |
           echo "Running KernelRidge..."
           python3 kernelridge/train2.py
-

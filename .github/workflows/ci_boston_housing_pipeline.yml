@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - kernelridge   # Trigger only when pushing to kernelridge branch
-on: 
-   push:
-    branches:
       - dtree
   pull_request:
     branches:

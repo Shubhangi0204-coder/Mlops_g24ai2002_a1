@@ -3,7 +3,7 @@ name: ML Workflow
 on:
   push:
     branches:
-      - kernelridge   # Trigger only when pushing to kernelridge branch
+      - kernelridge   # Trigger only when pushing to kernelridge
       - dtree
   pull_request:
     branches:

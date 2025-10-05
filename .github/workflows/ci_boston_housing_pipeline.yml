@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - kernelridge   # Trigger only when pushing to kernelridge branch
+on: 
+   push:
+    branches:
+      - dtree
   pull_request:
     branches:
       - main          # (Optional) Also trigger when merging into main
@@ -30,10 +34,7 @@ jobs:
         run: |
           echo "Running DecisionTreeRegressor..."
 
-          python3 /home/runner/work/Mlops_g24ai2002_a1/Mlops_g24ai2002_a1/dtree/train.py
-
           python3 train.py
-
 
       - name: Run KernelRidge (train2.py from kernelridge branch)
         run: |
